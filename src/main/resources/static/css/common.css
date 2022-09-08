@@ -7,8 +7,12 @@
     padding: 0;
 }
 
-.el-container {
+.el-container, .el-menu, .max-height {
     height: 100%;
+}
+
+.el-footer {
+    height: 80px !important;
 }
 
 .el-scrollbar__view {
@@ -17,4 +21,14 @@
 
 .el-menu-item-group__title {
     padding: 0;
+}
+
+.el-table th.el-table__cell {
+    font-size: medium;
+    font-weight: bold;
+    background-color: #7e8c8d !important;
+}
+
+.el-table thead {
+    color: #ffffff !important;
 }
