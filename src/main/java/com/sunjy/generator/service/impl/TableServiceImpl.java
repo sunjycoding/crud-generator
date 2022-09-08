@@ -55,7 +55,7 @@ public class TableServiceImpl implements TableService {
             ResultSet tables = databaseMetaData.getTables(null, null, null, new String[]{"TABLE"});
             while (tables.next()) {
                 String dbName = tables.getString("TABLE_CAT");
-                if ("db_wisdom_control_platform".equals(dbName)) {
+                if (ConnectionUtils.getDbName().equals(dbName)) {
                     String exactTableName = tables.getString("TABLE_NAME");
                     String remarks = tables.getString("REMARKS");
                     TableDTO tableDTO = TableDTO.builder()

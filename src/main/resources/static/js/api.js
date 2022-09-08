@@ -1,3 +1,5 @@
+const loginApi = "login"
+
 const tableApi = "table"
 
 const tableColumnApi = "table/column"

@@ -18,10 +18,16 @@ const loadOptions = {
 }
 let {loadModule} = window['vue3-sfc-loader'];
 
+let Login = Vue.defineAsyncComponent(() => loadModule('./views/Login.vue', loadOptions))
 let Layout = Vue.defineAsyncComponent(() => loadModule('./views/Layout.vue', loadOptions))
 let Table = Vue.defineAsyncComponent(() => loadModule('./views/Table.vue', loadOptions))
 
 let routes = [
+    {
+        path: "/login",
+        name: "Login",
+        component: Login,
+    },
     {path: '/', component: Layout},
     {
         path: '/table',
@@ -39,4 +45,18 @@ let routes = [
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHashHistory(),
     routes,
+})
+
+
+router.beforeEach((to, from, next) => {
+    let connected = localStorage.getItem('connected')
+    if (to.path === '/login') {
+        next()
+    } else {
+        if (connected) {
+            next()
+        } else {
+            next({ path: '/login' })
+        }
+    }
 })
