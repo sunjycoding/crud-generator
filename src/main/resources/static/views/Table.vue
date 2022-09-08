@@ -1,62 +1,89 @@
 <template>
-  <el-container>
-    <el-main>
-      <el-form :model="tableConditionDTO" :inline="true">
-        <el-form-item label="表名">
-          <el-input
-              v-model="tableConditionDTO.tableName"
-              placeholder="表名"
-          />
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="listTableData">查询</el-button>
-          <span class="count-hint">共有{{ tableDataList.length }}张表</span>
-        </el-form-item>
-      </el-form>
-      <el-table stripe :data="tableDataList" v-loading="tableDataListLoading">
-        <el-table-column
-            v-for="item in tableColumnList"
-            :key="item"
-            :prop="item.prop"
-            :label="item.label"
-            :formatter="item.formatter"
-            show-overflow-tooltip
-        >
-        </el-table-column>
-        <el-table-column label="操作" header-align="center" align="center">
-          <template #default="scope">
+  <div>
+    <el-container>
+      <el-main>
+        <el-form :model="tableConditionDTO" :inline="true">
+          <el-form-item label="表名">
+            <el-input
+                v-model="tableConditionDTO.tableName"
+                placeholder="表名"
+            />
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="listTableData">查询</el-button>
+            <span class="count-hint">共有{{ tableDataList.length }}张表</span>
+          </el-form-item>
+        </el-form>
+        <el-divider/>
+        <el-table stripe :data="tableDataList" v-loading="tableDataListLoading" border>
+          <el-table-column
+              v-for="item in tableColumnList"
+              :key="item"
+              :prop="item.prop"
+              :label="item.label"
+              :formatter="item.formatter"
+              show-overflow-tooltip
+          >
+          </el-table-column>
+          <el-table-column label="操作" header-align="center" align="center" width="240">
+            <template #default="scope">
             <span class="operate-btn-group">
-              <el-button type="primary" @click="handleTableColumnClick(scope.row)">
-                详情
-              </el-button>
-              <el-button type="success" @click="handleBackendClick(scope.row)">
-                后端代码生成
-              </el-button>
-              <el-button type="danger" @click="handleFrontendClick(scope.row)">
-                前端代码生成
-              </el-button>
+              <el-tooltip
+                  effect="dark"
+                  content="详情"
+                  placement="top"
+              >
+                <el-button @click="handleTableColumnClick(scope.row)" text>
+                  <el-icon :size="20">
+                    <Document/>
+                  </el-icon>
+                </el-button>
+              </el-tooltip>
+              <el-tooltip
+                  effect="dark"
+                  content="生成后端代码"
+                  placement="top"
+              >
+                <el-button @click="handleBackendClick(scope.row)" text>
+                  <el-icon :size="20">
+                    <Files/>
+                  </el-icon>
+                </el-button>
+              </el-tooltip>
+              <el-tooltip
+                  effect="dark"
+                  content="生成前端代码"
+                  placement="top"
+              >
+                <el-button @click="handleFrontendClick(scope.row)" text>
+                  <el-icon :size="20">
+                    <FolderOpened/>
+                  </el-icon>
+                </el-button>
+              </el-tooltip>
             </span>
-          </template>
-        </el-table-column>
-      </el-table>
-      <TableColumn
-          v-if="tableColumnVisible"
-          v-model:selectedData="selectedData"
-          v-model:tableColumnVisible="tableColumnVisible"
-          @refreshTableDataList="listTableData"
-      />
-      <BackendGenerateInfoDialog
-          v-if="backendGenerateInfoDialogVisible"
-          v-model:selectedData="selectedData"
-          v-model:backendGenerateInfoDialogVisible="backendGenerateInfoDialogVisible"
-      />
-      <FrontendGenerateInfoDialog
-          v-if="frontendGenerateInfoDialogVisible"
-          v-model:selectedData="selectedData"
-          v-model:frontendGenerateInfoDialogVisible="frontendGenerateInfoDialogVisible"
-      />
-    </el-main>
-  </el-container>
+            </template>
+          </el-table-column>
+        </el-table>
+        <TableColumn
+            v-if="tableColumnVisible"
+            v-model:selectedData="selectedData"
+            v-model:tableColumnVisible="tableColumnVisible"
+            @refreshTableDataList="listTableData"
+        />
+        <BackendGenerateInfoDialog
+            v-if="backendGenerateInfoDialogVisible"
+            v-model:selectedData="selectedData"
+            v-model:backendGenerateInfoDialogVisible="backendGenerateInfoDialogVisible"
+        />
+        <FrontendGenerateInfoDialog
+            v-if="frontendGenerateInfoDialogVisible"
+            v-model:selectedData="selectedData"
+            v-model:frontendGenerateInfoDialogVisible="frontendGenerateInfoDialogVisible"
+        />
+      </el-main>
+    </el-container>
+  </div>
 </template>
 
 <script>
