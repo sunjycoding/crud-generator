@@ -1,5 +1,7 @@
 package com.sunjy.generator.common.utils;
 
+import com.sunjy.generator.common.ResultFailureEnum;
+import com.sunjy.generator.common.exception.SystemException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -42,7 +44,7 @@ public class ConnectionUtils {
         if (connection != null) {
             return connection;
         }
-        throw new RuntimeException("数据库连接失败");
+        throw new SystemException(ResultFailureEnum.DATABASE_CONNECTED_ERROR);
     }
 
     public static String getDbName() {

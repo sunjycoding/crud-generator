@@ -11,9 +11,9 @@ import lombok.Getter;
 public enum ResultFailureEnum {
 
     /**
-     * 未知错误
+     * 数据库连接失败
      */
-    UNKNOWN_ERROR(1,"连接数据库失败"),
+    DATABASE_CONNECTED_ERROR(1,"连接数据库失败, 请重新连接"),
 
     ;
 

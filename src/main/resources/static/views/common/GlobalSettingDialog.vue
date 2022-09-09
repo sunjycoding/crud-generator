@@ -51,7 +51,7 @@ export default {
       okButtonLoading: false,
       dataRule: {},
       globalSetting: {
-        author: localStorage.getItem("author") ? localStorage.getItem("basePackage") : "",
+        author: localStorage.getItem("author") ? localStorage.getItem("author") : "",
         basePackage: localStorage.getItem("basePackage") ? localStorage.getItem("basePackage") : ""
       }
     }
@@ -77,7 +77,7 @@ export default {
           this.okButtonLoading = false
           this.onClose()
           this.$message({
-            message: "操作成功",
+            message: "设置成功",
             type: "success",
           })
         }

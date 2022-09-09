@@ -2,7 +2,7 @@
   <el-dialog
       v-model="tableColumnVisible"
       :title="selectedData.tableName"
-      width="30%"
+      width="60%"
       show-close
       center
       :before-close="beforeDialogClose"

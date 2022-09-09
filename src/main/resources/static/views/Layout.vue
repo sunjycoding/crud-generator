@@ -1,28 +1,24 @@
 <template>
-  <div class="max-height">
+  <el-container>
+    <el-header class="header-wrapper">
+      <Header/>
+    </el-header>
     <el-container>
-      <el-header class="header-wrapper">
-        <Header/>
-      </el-header>
-      <div class="max-height">
-        <el-container>
-          <el-aside class="aside-wrapper">
-            <SidebarMenu/>
-          </el-aside>
-          <el-container>
-            <el-main class="main-wrapper">
-              <el-card class="box-card">
-                <router-view></router-view>
-              </el-card>
-            </el-main>
-            <el-footer>
-              <Footer/>
-            </el-footer>
-          </el-container>
-        </el-container>
-      </div>
+      <el-aside class="aside-wrapper">
+        <SidebarMenu/>
+      </el-aside>
+      <el-container>
+        <el-main class="main-wrapper">
+          <el-card class="box-card">
+            <router-view></router-view>
+          </el-card>
+        </el-main>
+        <el-footer>
+          <Footer/>
+        </el-footer>
+      </el-container>
     </el-container>
-  </div>
+  </el-container>
 </template>
 
 <script>
@@ -58,6 +54,11 @@ export default {
   height: 100%;
   width: 100%;
   padding: 15px 20px;
+}
+
+.box-card {
+  height: 750px;
+  overflow-y: auto;
 }
 
 </style>

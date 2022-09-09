@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="copyright">copyright@2022</div>
+    <div class="copyright"></div>
   </div>
 </template>
 
@@ -24,7 +24,5 @@ export default {
 }
 
 .copyright {
-  margin: auto;
-  font-size: .8rem;
 }
 </style>

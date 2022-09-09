@@ -33,7 +33,7 @@ public class HttpResult {
     public static HttpResult failure(Exception e) {
         HttpResult httpResult = new HttpResult();
         int code = 1;
-        String msg = ResultFailureEnum.UNKNOWN_ERROR.getMessage();
+        String msg = ResultFailureEnum.DATABASE_CONNECTED_ERROR.getMessage();
         if (e instanceof SystemException) {
             if (((SystemException) e).getCode() != null) {
                 code = ((SystemException) e).getCode();
