@@ -49,7 +49,7 @@ const router = VueRouter.createRouter({
 
 
 router.beforeEach((to, from, next) => {
-    let connected = localStorage.getItem('connected')
+    let connected = sessionStorage.getItem('connected')
     if (to.path === '/login') {
         next()
     } else {

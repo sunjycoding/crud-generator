@@ -11,6 +11,10 @@
     height: 100%;
 }
 
+.el-header {
+    padding: 0 !important;
+}
+
 .el-footer {
     height: 80px !important;
 }

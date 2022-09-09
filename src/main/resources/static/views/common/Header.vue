@@ -1,10 +1,7 @@
 <template>
   <div class="header">
     <div class="logo-wrapper">
-      <el-image style="width: 100px; height: 100px"
-                src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-                fit="fill"
-      />
+      <el-image src="images/logo.png" style="width: 100%;" fit="fill"></el-image>
     </div>
     <div class="title">CRUD代码生成平台</div>
   </div>
@@ -29,11 +26,13 @@ export default {
 }
 
 .logo-wrapper {
+  width: 240px;
   cursor: pointer;
 }
 
 .header .title {
   font-size: 2em;
-  margin: auto 300px;
+  margin: auto 150px;
+  border-left: 1px solid #eee;
 }
 </style>
