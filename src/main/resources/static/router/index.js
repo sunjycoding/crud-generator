@@ -18,11 +18,24 @@ const loadOptions = {
 }
 let {loadModule} = window['vue3-sfc-loader'];
 
+let NotFound = Vue.defineAsyncComponent(() => loadModule('./views/common/Notfound.vue', loadOptions))
 let Login = Vue.defineAsyncComponent(() => loadModule('./views/Login.vue', loadOptions))
 let Layout = Vue.defineAsyncComponent(() => loadModule('./views/Layout.vue', loadOptions))
 let Table = Vue.defineAsyncComponent(() => loadModule('./views/Table.vue', loadOptions))
 
 let routes = [
+    {
+        path: "/:pathMatch(.*)*",
+        name: "404",
+        component: Layout,
+        children: [
+            {
+                path: "/:pathMatch(.*)*",
+                name: "404",
+                component: NotFound,
+            },
+        ],
+    },
     {
         path: "/login",
         name: "Login",

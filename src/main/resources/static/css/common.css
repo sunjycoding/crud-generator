@@ -48,16 +48,52 @@
     height: 100%;
 }
 
+.el-menu {
+    background-color: #545c64 !important;
+    color: #ffffff !important;
+}
+
 .el-menu-item-group__title {
     padding: 0;
+}
+
+.el-menu-item:hover, .el-menu-item.is-active {
+    background: #434A50 !important;
+    color: #ffd04b !important;
 }
 
 .el-table th.el-table__cell {
     font-size: medium;
     font-weight: bold;
-    background-color: #409eff !important;
+    background: #545c64 !important;
+    color: #ffffff;
+    border: 0.006rem solid #eff4ff;
 }
 
 .el-table thead {
     color: #ffffff !important;
+}
+
+.el-input__wrapper.is-focus {
+    box-shadow: 0 0 0 1px #545c64 inset !important;
+}
+
+.el-button {
+    width: 90px;
+    height: 35px;
+    border-radius: 6px;
+    padding: 9px 15px;
+}
+
+.operate-btn-group > .el-button {
+    width: 30px;
+    height: 35px;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.el-button--primary {
+    border-color: #000000 !important;
+    background: #000000 !important;
 }
