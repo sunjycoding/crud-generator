@@ -1,2 +1,2 @@
 # crud-generator
-CRUD generator with Spring Boot and Vue
+CRUD generator build by Spring Boot and Vue
