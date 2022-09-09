@@ -60,9 +60,4 @@ export default {
   padding: 15px 20px;
 }
 
-.box-card {
-  height: 100%;
-  overflow-y: auto;
-}
-
 </style>
