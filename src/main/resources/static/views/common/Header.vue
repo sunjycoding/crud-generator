@@ -53,7 +53,16 @@ export default {
     },
 
     handleSwitchDatabaseClick() {
-      this.$router.push("/login")
+      const options = {}
+      let loadingInstance = ElementPlus.ElLoading.service(options)
+      setTimeout(() => {
+        loadingInstance.close()
+        this.$router.push("/login")
+        this.$message({
+          message: "退出成功",
+          type: "success",
+        })
+      }, 200)
     }
   },
 };
