@@ -1,10 +1,10 @@
-package com.hnbhbt.${moduleName}controller;
+package ${basePackage}.${moduleName}controller;
 
-import com.hnbhbt.common.HttpResult;
-import com.hnbhbt.common.PageParams;
-import com.hnbhbt.${moduleName}.service.${tableNameFirstLetterUppercase}Service;
-import com.hnbhbt.${moduleName}.dto.${tableNameFirstLetterUppercase}ConditionDTO;
-import com.hnbhbt.${moduleName}.dto.${tableNameFirstLetterUppercase}DTO;
+import ${basePackage}.common.HttpResult;
+import ${basePackage}.common.PageParams;
+import ${basePackage}.${moduleName}.service.${tableNameFirstLetterUppercase}Service;
+import ${basePackage}.${moduleName}.dto.${tableNameFirstLetterUppercase}ConditionDTO;
+import ${basePackage}.${moduleName}.dto.${tableNameFirstLetterUppercase}DTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

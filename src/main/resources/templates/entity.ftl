@@ -1,6 +1,6 @@
-package com.hnbhbt.${moduleName}.entity;
+package ${basePackage}.${moduleName}.entity;
 
-import com.hnbhbt.common.BaseEntity;
+import ${basePackage}.common.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 

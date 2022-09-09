@@ -2,7 +2,7 @@
   <el-dialog
       v-model="tableColumnVisible"
       :title="selectedData.tableName"
-      width="30%"
+      width="60%"
       show-close
       center
       :before-close="beforeDialogClose"
@@ -79,7 +79,9 @@ export default {
             params: params,
           })
           .then((response) => {
-            this.tableDataList = response.data.data
+            if (response.data && response.data.data) {
+              this.tableDataList = response.data.data
+            }
             setTimeout(() => {
               this.tableDataListLoading = false
             }, 200)

@@ -11,7 +11,8 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="listTableData">查询</el-button>
-            <span class="count-hint">共有{{ tableDataList.length }}张表</span>
+            <span class="count-hint">当前连接数据库: {{ currentDbUrl }};
+              共有{{ tableDataList.length }}张表</span>
           </el-form-item>
         </el-form>
         <el-divider/>
@@ -95,6 +96,7 @@ export default {
   components: {TableColumn, BackendGenerateInfoDialog, FrontendGenerateInfoDialog},
   data() {
     return {
+      currentDbUrl: "",
       tableColumnList: [
         {
           prop: "tableName",
@@ -115,6 +117,8 @@ export default {
     }
   },
   created() {
+    let currentDbUrl = localStorage.getItem("currentDbUrl")
+    this.currentDbUrl = currentDbUrl ? currentDbUrl : "空"
     this.listTableData()
   },
   methods: {
@@ -130,7 +134,9 @@ export default {
             params: params,
           })
           .then((response) => {
-            this.tableDataList = response.data.data
+            if (response.data && response.data.data) {
+              this.tableDataList = response.data.data
+            }
             setTimeout(() => {
               this.tableDataListLoading = false
             }, 200)

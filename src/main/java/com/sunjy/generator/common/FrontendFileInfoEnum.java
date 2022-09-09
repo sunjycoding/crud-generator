@@ -12,11 +12,11 @@ import java.io.File;
 @AllArgsConstructor
 public enum FrontendFileInfoEnum {
 
-//    /**
-//     * apiJs
-//     */
-//    API_JS(Constants.FRONTEND_TEMP_DIR_PATH,
-//            "Api.js", "apiJs.ftl"),
+    /**
+     * apiJs
+     */
+    API_JS(Constants.FRONTEND_TEMP_DIR_PATH,
+            "Api.js", "apiJs.ftl"),
 
     /**
      * tablePage

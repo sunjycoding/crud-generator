@@ -61,7 +61,7 @@ export default {
 }
 
 .box-card {
-  height: 100%;
+  height: 750px;
   overflow-y: auto;
 }
 

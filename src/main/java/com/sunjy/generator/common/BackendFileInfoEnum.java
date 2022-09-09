@@ -54,6 +54,12 @@ public enum BackendFileInfoEnum {
     CONDITION_DTO(Constants.BACKEND_TEMP_DIR_PATH + "dto" + File.separator,
             "ConditionDTO.java", "conditionDTO.ftl"),
 
+    /**
+     * convertor
+     */
+    CONVERTOR(Constants.BACKEND_TEMP_DIR_PATH + "convertor" + File.separator,
+            "Convertor.java", "convertor.ftl"),
+
     ;
 
     private final String path;

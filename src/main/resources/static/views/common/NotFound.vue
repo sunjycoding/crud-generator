@@ -1,10 +1,12 @@
 <template>
-  <div class="footer">
-  </div>
+  <el-empty :image-size="270">
+    <template #description>
+      <span>找不到该页面</span>
+    </template>
+  </el-empty>
 </template>
 
 <script>
-
 export default {
   data() {
     return {};
@@ -16,9 +18,4 @@ export default {
 </script>
 
 <style scoped>
-.footer {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
 </style>

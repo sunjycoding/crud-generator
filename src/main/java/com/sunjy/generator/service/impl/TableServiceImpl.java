@@ -55,7 +55,7 @@ public class TableServiceImpl implements TableService {
             ResultSet tables = databaseMetaData.getTables(null, null, null, new String[]{"TABLE"});
             while (tables.next()) {
                 String dbName = tables.getString("TABLE_CAT");
-                if ("db_wisdom_control_platform".equals(dbName)) {
+                if (ConnectionUtils.getDbName().equals(dbName)) {
                     String exactTableName = tables.getString("TABLE_NAME");
                     String remarks = tables.getString("REMARKS");
                     TableDTO tableDTO = TableDTO.builder()
@@ -122,6 +122,7 @@ public class TableServiceImpl implements TableService {
         String tableNameFirstLetterLowercase = CommonUtils.underlineToCamelCaseFirstLowercase(dropTbTableName);
         String tableNameFirstLetterUppercase = CommonUtils.underlineToCamelCaseFirstUppercase(dropTbTableName);
         String author = requiredInfoDTO.getAuthor();
+        String basePackage = requiredInfoDTO.getBasePackage();
         String moduleName = requiredInfoDTO.getModuleName();
         String routerPath = requiredInfoDTO.getRouterPath();
         String apiDescription = requiredInfoDTO.getApiDescription();
@@ -149,6 +150,7 @@ public class TableServiceImpl implements TableService {
                 templateData.put("tableName", tableName);
                 templateData.put("moduleName", moduleName);
                 templateData.put("author", author);
+                templateData.put("basePackage", basePackage);
                 templateData.put("date", DateUtils.now());
                 templateData.put("routerPath", routerPath);
                 templateData.put("apiDescription", apiDescription);

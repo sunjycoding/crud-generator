@@ -1,5 +1,6 @@
 package com.sunjy.generator.common;
 
+import com.sunjy.generator.common.exception.SystemException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -32,8 +33,20 @@ public class HttpResult {
     public static HttpResult failure(Exception e) {
         HttpResult httpResult = new HttpResult();
         int code = 1;
+        String msg = ResultFailureEnum.DATABASE_CONNECTED_ERROR.getMessage();
+        if (e instanceof SystemException) {
+            if (((SystemException) e).getCode() != null) {
+                code = ((SystemException) e).getCode();
+            }
+            msg = e.getMessage();
+        } else if (e.getCause() instanceof SystemException cause) {
+            if (cause.getCode() != null) {
+                code = cause.getCode();
+            }
+            msg = e.getMessage();
+        }
         httpResult.setCode(code);
-        httpResult.setMsg(e.getMessage());
+        httpResult.setMsg(msg);
         return httpResult;
     }
 

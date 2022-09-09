@@ -1,9 +1,9 @@
-package com.hnbhbt.${moduleName}.service;
+package ${basePackage}.${moduleName}.service;
 
-import com.hnbhbt.common.PageParams;
-import com.hnbhbt.common.Pagination;
-import com.hnbhbt.${moduleName}.dto.${tableNameFirstLetterUppercase}ConditionDTO;
-import com.hnbhbt.${moduleName}.dto.${tableNameFirstLetterUppercase}DTO;
+import ${basePackage}.common.PageParams;
+import ${basePackage}.common.Pagination;
+import ${basePackage}.${moduleName}.dto.${tableNameFirstLetterUppercase}ConditionDTO;
+import ${basePackage}.${moduleName}.dto.${tableNameFirstLetterUppercase}DTO;
 
 import java.util.List;
 
