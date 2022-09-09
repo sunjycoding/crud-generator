@@ -42,7 +42,7 @@ public class ConnectionUtils {
         if (connection != null) {
             return connection;
         }
-        throw new RuntimeException("No Connection Found");
+        throw new RuntimeException("数据库连接失败");
     }
 
     public static String getDbName() {

@@ -79,7 +79,9 @@ export default {
             params: params,
           })
           .then((response) => {
-            this.tableDataList = response.data.data
+            if (response.data && response.data.data) {
+              this.tableDataList = response.data.data
+            }
             setTimeout(() => {
               this.tableDataListLoading = false
             }, 200)

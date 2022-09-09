@@ -1,6 +1,6 @@
-package com.hnbhbt.${moduleName}.dto;
+package ${basePackage}.${moduleName}.dto;
 
-import com.hnbhbt.common.BaseDTO;
+import ${basePackage}.common.BaseDTO;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

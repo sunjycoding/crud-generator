@@ -1,4 +1,4 @@
-package com.hnbhbt.${moduleName}.dto;
+package ${basePackage}.${moduleName}.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

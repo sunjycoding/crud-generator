@@ -20,6 +20,11 @@ public class RequiredInfoDTO {
     private String author;
 
     /**
+     * 基础包路径
+     */
+    private String basePackage;
+
+    /**
      * 模块名
      */
     private String moduleName;

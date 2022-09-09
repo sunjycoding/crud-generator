@@ -122,6 +122,7 @@ public class TableServiceImpl implements TableService {
         String tableNameFirstLetterLowercase = CommonUtils.underlineToCamelCaseFirstLowercase(dropTbTableName);
         String tableNameFirstLetterUppercase = CommonUtils.underlineToCamelCaseFirstUppercase(dropTbTableName);
         String author = requiredInfoDTO.getAuthor();
+        String basePackage = requiredInfoDTO.getBasePackage();
         String moduleName = requiredInfoDTO.getModuleName();
         String routerPath = requiredInfoDTO.getRouterPath();
         String apiDescription = requiredInfoDTO.getApiDescription();
@@ -149,6 +150,7 @@ public class TableServiceImpl implements TableService {
                 templateData.put("tableName", tableName);
                 templateData.put("moduleName", moduleName);
                 templateData.put("author", author);
+                templateData.put("basePackage", basePackage);
                 templateData.put("date", DateUtils.now());
                 templateData.put("routerPath", routerPath);
                 templateData.put("apiDescription", apiDescription);

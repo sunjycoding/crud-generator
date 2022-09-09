@@ -7,13 +7,7 @@
       router
   >
     <el-menu-item index="/table">
-      <span>数据库表</span>
-    </el-menu-item>
-    <el-menu-item index="2" disabled>
-      <span>日志</span>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <span>监控</span>
+      <span>数据库表信息</span>
     </el-menu-item>
   </el-menu>
 </template>

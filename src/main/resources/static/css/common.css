@@ -1,3 +1,28 @@
+.justify-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.justify-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.justify-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.justify-around {
+    display: flex;
+    justify-content: space-around;
+}
+
 .el-container,
 .el-header,
 .el-aside,
@@ -30,7 +55,7 @@
 .el-table th.el-table__cell {
     font-size: medium;
     font-weight: bold;
-    background-color: #7e8c8d !important;
+    background-color: #409eff !important;
 }
 
 .el-table thead {

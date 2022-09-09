@@ -49,14 +49,5 @@ const router = VueRouter.createRouter({
 
 
 router.beforeEach((to, from, next) => {
-    let connected = sessionStorage.getItem('connected')
-    if (to.path === '/login') {
-        next()
-    } else {
-        if (connected) {
-            next()
-        } else {
-            next({ path: '/login' })
-        }
-    }
+    next()
 })
